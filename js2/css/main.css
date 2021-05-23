@@ -1,0 +1,17 @@
+body {
+  padding: 40vh 100px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: space-between;
+}
+
+button {
+  max-width: 120px;
+  background-color: #fff;
+  color: #3f51b5; 
+  -webkit-apperance: none;
+  border-color: rgba(0,0,0,.12);
+  box-shadow: 0 0 0 0 rgb(0 0 0 / 20%),
+              0 0 0 0 rgb(0 0 0 / 14%),
+              0 0 0 0 rgb(0 0 0 / 12%);
+}
