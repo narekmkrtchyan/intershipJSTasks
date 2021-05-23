@@ -1,5 +1,3 @@
-//Task1
-
 let y=0;
 
 function task1() {
