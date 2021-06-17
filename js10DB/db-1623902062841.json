@@ -1,0 +1,19 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Narek Mkrtchyan",
+      "email": "narekmkrtchyan991@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Poghos Poghosyan",
+      "email": "poghosPoghosyan@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Petros Petrosyan",
+      "email": "petrosPetrosyan@gmail.com"
+    }
+  ]
+}

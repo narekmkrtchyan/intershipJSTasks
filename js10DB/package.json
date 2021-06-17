@@ -1,0 +1,19 @@
+{
+  "name": "js10db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass scss/main.scss css/style.css -w",
+    "json:server": "json-server --watch db.json"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "json-server": "^0.16.3"
+  },
+  "author": "",
+  "license": "ISC"
+}

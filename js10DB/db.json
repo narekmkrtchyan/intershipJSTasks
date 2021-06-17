@@ -1,0 +1,24 @@
+{
+  "students": [
+    {
+      "name": "Narek",
+      "email": "narek.mkrtchyan991@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "anna",
+      "email": "mkrtumian94@mail.ru",
+      "id": 4
+    },
+    {
+      "name": "new student",
+      "email": "student@dsd.sfs",
+      "id": 5
+    },
+    {
+      "name": "dsf",
+      "email": "dsd@dsf.dfs",
+      "id": 6
+    }
+  ]
+}

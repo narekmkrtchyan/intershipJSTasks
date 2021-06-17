@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Tasks</title>
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link href="./fonts/css/fontawesome.css" rel="stylesheet">
+  <link href="./fonts/css/v4-shims.css" rel="stylesheet">
+  <link href="./fonts/css/brands.css" rel="stylesheet">
+  <link href="./fonts/css/solid.css" rel="stylesheet">
+</head>
+<body>
+	<div class="title-wrapper container">
+		<h1><i class="fa fa-university"></i>Students</h1>
+		<button onclick="addStudent()" class="addButton"><i class="fa fa-user-plus"></i>Add Student</button>
+	</div>
+	<div class="table-wrapper container">
+		<table id="studentsTable">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th><i class="fa fa-user-edit"></i></th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<div id="modal" class="modal-wrapper hidden">
+				<div class="new-student-modal">
+					<h2><i class="fa fa-user-edit"></i> Create/Update Student info</h2>
+					<div class="name">
+						<input id="name" type="text" name="name" placeholder="name" />
+					</div>
+					<div class="email">
+						<input id="email" type="email" name="email" placeholder="Email" />
+					</div>
+					<button onclick="submit()"><i class="fa fa-check"></i>Create/Update</button>
+					<button onclick="cancel()"><i class="fa fa-times"></i>Cancel</button>
+				</div>
+			</div>
+		</table>
+	</div>
+  <script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
