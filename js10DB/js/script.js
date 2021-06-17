@@ -7,49 +7,49 @@ const modal = document.querySelector('#modal');
 const tbody = document.querySelector('#studentsTable tbody');
 
 fetch(URL)
-	.then(res => {
-		return res.json();
-	})
-	.then(data => {
-		students = data;
-		createStudentsElement(students);
-	})
+  .then(res => {
+    return res.json();
+  })
+  .then(data => {
+    students = data;
+    createStudentsElement(students);
+  })
 
 function createStudentsElement(data) {
-	data.map(student => {
-		addStudentElement(student);
-	});
+  data.map(student => {
+    addStudentElement(student);
+  });
 }
 
 function addStudentElement(student) {
-	let elem = createElement(
-	  'tr',
-	  [
-	  	createElement('td', student.id),
-	  	createElement('td', student.name, 'name'),
-	  	createElement('td', student.email, 'email'),
-	  	createElement('td', [deleteBtn, editBtn]),
-	  ],
-	  `student-${student.id}`,
-	);
+  let elem = createElement(
+    'tr',
+    [
+      createElement('td', student.id),
+      createElement('td', student.name, 'name'),
+      createElement('td', student.email, 'email'),
+      createElement('td', [deleteBtn, editBtn]),
+    ],
+    `student-${student.id}`,
+  );
 
-	tbody.append(elem);
-	elem.querySelector('.delete-btn').addEventListener('click', (e => {
-		deleteItem(student);
-		elem.remove();
-	}));
-	elem.querySelector('.edit-btn').addEventListener('click', (e => {
-		modal.setAttribute('studentId', student.id);
-		isCreating = false;
-		modal.querySelector('#name').value = student.name;
-		modal.querySelector('#email').value = student.email;
-		modalShow();
-	}));
+  tbody.append(elem);
+  elem.querySelector('.delete-btn').addEventListener('click', (e => {
+    deleteItem(student);
+    elem.remove();
+  }));
+  elem.querySelector('.edit-btn').addEventListener('click', (e => {
+    modal.setAttribute('studentId', student.id);
+    isCreating = false;
+    modal.querySelector('#name').value = student.name;
+    modal.querySelector('#email').value = student.email;
+    modalShow();
+  }));
 }
 
 function addStudent() {
-	isCreating = true;
-	modalShow();
+  isCreating = true;
+  modalShow();
 }
 
 async function deleteItem(data) {
@@ -85,10 +85,10 @@ async function updateItem(data) {
   });
 
   students.map(s => {
-  	if (s.id === data.id) {
-  		s.name = data.name;
-  		s.email = data.email;
-  	}
+    if (s.id === data.id) {
+      s.name = data.name;
+      s.email = data.email;
+    }
   });
 
   tbody.querySelector(`.student-${data.id} .name`).innerHTML = data.name;
@@ -104,9 +104,9 @@ function createElement(tag, content = '', classNames = '') {
     elem.className = classNames;
   }
   if (typeof content === 'string' || typeof content === 'number') {
-  	elem.innerHTML = content;
+    elem.innerHTML = content;
   } else {
-  	elem.innerHTML = getContent(content);
+    elem.innerHTML = getContent(content);
   }
   return elem;
 }
@@ -119,11 +119,11 @@ function getContent(content) {
       if (Array.isArray(c)) {
         changedContent += getContent(c);
       } else {
-      	if (typeof c === 'string' || typeof c === 'number') {
-        	changedContent += c;
-      	} else {
-        	changedContent += c.outerHTML;
-      	}
+        if (typeof c === 'string' || typeof c === 'number') {
+          changedContent += c;
+        } else {
+          changedContent += c.outerHTML;
+        }
       }
     });
   } else {
@@ -135,37 +135,37 @@ function getContent(content) {
 
 
 function submit() {
-	let id;
-	if (isCreating) {
-		id = students[students.length - 1].id + 1;
-	} else {
-		id = modal.getAttribute('studentId');
-	}
+  let id;
+  if (isCreating) {
+    id = students[students.length - 1].id + 1;
+  } else {
+    id = modal.getAttribute('studentId');
+  }
 
-	const data = {
-		name: modal.querySelector('#name').value,
-		email: modal.querySelector('#email').value,
-		id: id,
-	};
+  const data = {
+    name: modal.querySelector('#name').value,
+    email: modal.querySelector('#email').value,
+    id: id,
+  };
 
-	if (isCreating) {
-		createItem(data);
-	} else {
-		updateItem(data);
-	}
-	modalHide();
+  if (isCreating) {
+    createItem(data);
+  } else {
+    updateItem(data);
+  }
+  modalHide();
 }
 
 function cancel() {
-	modalHide();
+  modalHide();
 }
 
 function modalHide() {
-	modal.querySelector('#name').value = '';
-	modal.querySelector('#email').value = '';
-	modal.classList.add('hidden');
+  modal.querySelector('#name').value = '';
+  modal.querySelector('#email').value = '';
+  modal.classList.add('hidden');
 }
 
 function modalShow() {
-	modal.classList.remove('hidden');
+  modal.classList.remove('hidden');
 }
