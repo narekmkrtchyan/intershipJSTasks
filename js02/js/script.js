@@ -5,8 +5,8 @@ function task12() {
   if ( n <= 0) {
     alert('incorect value n');
   } else {
-    for(i = 1; i<=n; i++ ){
-      sum = sum + i*i 
+    for (i = 1; i <= n; i++ ) {
+      sum = sum + i * i; 
     }
     alert(sum);
   }
